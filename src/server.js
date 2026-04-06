@@ -1,22 +1,20 @@
 const express = require('express');
-const cron = require('node-cron');
-
 const app = express();
 
-// JSON verilerini okuyabilmek için gerekli ayar
+// Rota dosyalarını içe aktarıyoruz
+const jobRoutes = require('./routes/jobRoutes');
+
 app.use(express.json());
 
-// Temel bir kontrol (Health Check) rotası
+// Oluşturduğumuz rotaları /api/jobs yoluna bağlıyoruz
+app.use('/api/jobs', jobRoutes);
+
 app.get('/', (req, res) => {
-    res.json({ 
-        message: "Remote Cronjob API Node.js ile Çalışıyor! 🚀",
-        status: "healthy"
-    });
+    res.json({ message: "Remote Cronjob API Hazır! /api/jobs endpointini kullanabilirsiniz." });
 });
 
-// Sunucuyu ayağa kaldırma
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Sunucu http://localhost:${PORT} adresinde başarıyla başlatıldı.`);
-    console.log('Cronjob motoru hazır bekliyor...');
+    console.log(`✅ Sunucu başlatıldı: http://localhost:${PORT}`);
+    console.log('⏳ Görev yöneticisi dinlemede...');
 });
