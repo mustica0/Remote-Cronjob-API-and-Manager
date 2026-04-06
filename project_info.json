@@ -1,0 +1,17 @@
+{
+  "projectName": "Remote-Cronjob-API-and-Manager",
+  "category": "Task Scheduling & Automation",
+  "author": "Mustafa",
+  "version": "1.0.0",
+  "description": "Dağıtık sistemler için uzaktan yönetilebilir cronjob API ve otomasyon yöneticisi.",
+  "features": [
+    "API üzerinden uzaktan görev tetikleme ve yönetimi",
+    "Otomatik sistem sağlık kontrolü (Self-Check mekanizması)",
+    "Modern ve mobil uyumlu (responsive) Web Dashboard",
+    "Bash script ve jq ile terminal tabanlı JSON otomasyonu"
+  ],
+  "requirements": {
+    "os": "Linux / Ubuntu 22.04",
+    "language": "Bash, JavaScript, HTML"
+  }
+}
