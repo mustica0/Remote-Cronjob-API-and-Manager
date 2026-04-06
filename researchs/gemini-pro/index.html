@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Cronjob API & Manager Araştırması</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; padding: 20px; max-width: 900px; margin: auto; background-color: #f4f7f6; color: #333; }
+        h1 { color: #2c3e50; text-align: center; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h2 { color: #2980b9; margin-top: 0; }
+        .tag { display: inline-block; background: #eee; padding: 5px 10px; border-radius: 15px; font-size: 0.9em; margin-right: 5px; }
+    </style>
+</head>
+<body>
+    <h1>🚀 Remote Cronjob API Raporu</h1>
+    
+    <div class="card">
+        <h2>1. Mimari Prensipler</h2>
+        <p>Sistem monolitik bir `crontab` yerine dağıtık çalışır. <strong>API Gateway</strong> istekleri karşılar, <strong>Manager</strong> zamanlamayı yapar ve <strong>Worker Node'lar</strong> görevleri yerine getirir.</p>
+    </div>
+
+    <div class="card">
+        <h2>2. En İyi Uygulamalar (Best Practices)</h2>
+        <p>Sistem <strong>Idempotent</strong> (tekrar çalışmalara karşı korumalı) olmalı, tek nokta hatasını (SPOF) önlemeli ve hata veren görevler için <strong>Dead Letter Queue (DLQ)</strong> kullanmalıdır.</p>
+    </div>
+
+    <div class="card">
+        <h2>3. Rakipler & Açık Kaynak Çözümler</h2>
+        <div>
+            <span class="tag">Dkron</span>
+            <span class="tag">Kubernetes CronJob</span>
+            <span class="tag">Apache Airflow</span>
+            <span class="tag">Temporal</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>4. Güvenlik</h2>
+        <p>Tüm endpointler JWT/OAuth2 ile korunmalı, Worker Node'lar "En Az Yetki Prensibi" ile çalıştırılmalı ve dışarıdan gelen parametreler Command Injection riskine karşı kesinlikle filtrelenmelidir.</p>
+    </div>
+</body>
+</html>
